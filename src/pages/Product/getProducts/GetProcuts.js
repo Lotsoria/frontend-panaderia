@@ -64,39 +64,67 @@ function GetProductsPage() {
 
   //TODO Logica para actualizar
   const [editModal, setEditModal] = useState(false);
-const [currentProduct, setCurrentProduct] = useState({
-  id: '',
-  name: '',
-  description: '',
-  price: '',
-  stock: '',
-  image_url: '',
-});
-const toggleEditModal = (product) => {
-  setCurrentProduct(product);
-  setEditModal(!editModal);
-};
-const editProduct = async () => {
-  // Aquí iría el código para enviar los datos actualizados al servidor
-  // Por ejemplo, usando axios para enviar una petición PUT
-  try {
-    const response = await axios.put(`${URI}update/${currentProduct.id}`, {
-      name: currentProduct.name,
-      // Añadir otros campos aquí
-    });
-    if (response.status === 200) {
-      // Cerrar modal
-      toggleEditModal();
-      // Actualizar lista de productos
-      getProducts();
-      Swal.fire("¡Actualizado!", "El producto ha sido actualizado correctamente.", "success");
+  const [currentProduct, setCurrentProduct] = useState({
+    name: "",
+    description: "",
+    price: "",
+    stock: "",
+    image: "",
+  });
+  const toggleEditModal = (product) => {
+    setCurrentProduct(product);
+    setEditModal(!editModal);
+  };
+  const editProduct = async () => {
+    try {
+      const thisProduct = await axios.get(`${URI}find/${currentProduct.id}`);
+      console.log(thisProduct);
+      const formData = new FormData();
+      formData.append(
+        "name",
+        currentProduct.name ? currentProduct.name : thisProduct.data.name
+      );
+      formData.append(
+        "description",
+        currentProduct.description
+          ? currentProduct.description
+          : thisProduct.data.description
+      );
+      formData.append(
+        "price",
+        currentProduct.price ? currentProduct.price : thisProduct.data.price
+      );
+      formData.append(
+        "stock",
+        currentProduct.stock ? currentProduct.stock : thisProduct.data.stock
+      );
+
+      if (currentProduct.image) {
+        formData.append("image", currentProduct.image);
+      } else {
+        formData.append("image_url", thisProduct.data.image_url);
+      }
+      const response = await axios.put(
+        `${URI}update/${currentProduct.id}`,
+        formData,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
+      if (response.status === 200) {
+        toggleEditModal();
+        getProducts();
+        Swal.fire(
+          "¡Actualizado!",
+          "El producto ha sido actualizado correctamente.",
+          "success"
+        );
+      }
+    } catch (error) {
+      console.log(error);
+      Swal.fire("Error!", "No se pudo actualizar el producto.", "error");
     }
-  } catch (error) {
-    Swal.fire("Error!", "No se pudo actualizar el producto.", "error");
-  }
-};
-
-
+  };
 
   return (
     <div>
@@ -113,11 +141,13 @@ const editProduct = async () => {
                     {product.name}
                     <br></br>
                     <span>Q.{product.price} C/U</span>
+                    <br></br>
+                    <span>Disponibles {product.stock}</span>
                   </h3>
                 </div>
                 <ul className="sci">
                   <li>
-                  <a onClick={() => toggleEditModal(product)}>Editar</a>
+                    <a onClick={() => toggleEditModal(product)}>Editar</a>
                   </li>
                   <li>
                     <a onClick={() => deleteProduct(product.id)}>Eliminar</a>
@@ -143,29 +173,74 @@ const editProduct = async () => {
         </div>
       </section>
       <Modal isOpen={editModal} toggle={toggleEditModal}>
-  <ModalHeader toggle={toggleEditModal}>Editar Producto</ModalHeader>
-  <ModalBody>
-    <FormGroup>
-      <label>Id:</label>
-      <input className="form-control" readOnly type="text" value={currentProduct.id} />
-    </FormGroup>
-    <FormGroup>
-      <label>Nombre:</label>
-      <input
-        className="form-control"
-        type="text"
-        value={currentProduct.name}
-        onChange={(e) => setCurrentProduct({ ...currentProduct, name: e.target.value })}
-      />
-    </FormGroup>
-    {/* Añadir más campos aquí */}
-  </ModalBody>
-  <ModalFooter>
-    <Button color="primary" onClick={() => editProduct()}>Editar</Button>
-    <Button color="secondary" onClick={toggleEditModal}>Cancelar</Button>
-  </ModalFooter>
-</Modal>
-
+        <ModalHeader toggle={toggleEditModal}>Editar Producto</ModalHeader>
+        <ModalBody>
+          <FormGroup>
+            <label>Nombre:</label>
+            <input
+              className="form-control"
+              type="text"
+              onChange={(e) =>
+                setCurrentProduct({ ...currentProduct, name: e.target.value })
+              }
+            />
+          </FormGroup>
+          <FormGroup>
+            <label>Descripción:</label>
+            <input
+              className="form-control"
+              type="text"
+              onChange={(e) =>
+                setCurrentProduct({
+                  ...currentProduct,
+                  description: e.target.value,
+                })
+              }
+            />
+          </FormGroup>
+          <FormGroup>
+            <label>Precio:</label>
+            <input
+              className="form-control"
+              type="text"
+              onChange={(e) =>
+                setCurrentProduct({ ...currentProduct, price: e.target.value })
+              }
+            />
+          </FormGroup>
+          <FormGroup>
+            <label>Stock:</label>
+            <input
+              className="form-control"
+              type="text"
+              onChange={(e) =>
+                setCurrentProduct({ ...currentProduct, stock: e.target.value })
+              }
+            />
+          </FormGroup>
+          <FormGroup>
+            <label>Foto:</label>
+            <input
+              className="form-control"
+              type="file"
+              onChange={(e) =>
+                setCurrentProduct({
+                  ...currentProduct,
+                  image: e.target.files[0],
+                })
+              }
+            />
+          </FormGroup>
+        </ModalBody>
+        <ModalFooter>
+          <Button color="primary" onClick={() => editProduct()}>
+            Editar
+          </Button>
+          <Button color="secondary" onClick={toggleEditModal}>
+            Cancelar
+          </Button>
+        </ModalFooter>
+      </Modal>
     </div>
   );
 }

@@ -86,7 +86,7 @@ function CreateProductsPage() {
         <div className="mb-3">
           <label className="form-label">Imagen</label>
           <div className="div_file">
-            <p class="text">Seleccionar imagen</p>
+            <p className="text">Seleccionar imagen</p>
             <input
               type="file"
               name="image"

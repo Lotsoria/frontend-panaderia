@@ -10,9 +10,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/product/*" element={<ProductPage />} />  // Añade '/*' para manejar subrutas
+        <Route path="/product/*" element={<ProductPage />} />
         <Route path="/customers" element={<CustomerPage />} />
-        <Route path="/staff" element={<StaffPage />} />
+        <Route path="/staff/*" element={<StaffPage />} />
       </Routes>
     </BrowserRouter>
   );

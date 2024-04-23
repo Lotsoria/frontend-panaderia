@@ -2,9 +2,10 @@ import React from "react";
 import Header from "../../components/common/header/header";
 import NavBarProductPage from "./navbarProducts/NavBarProducts";
 import { Routes, Route } from "react-router-dom";
-import CreateProductsPage from "./createProducts/CreateProdcuts";
+import CreateProductsPage from "./createProducts/CreateProducts";
 import GetProductsPage from "./getProducts/GetProcuts";
 import "./styles.css";
+
 function ProductPage() {
   return (
     <div className="containerProductPage">
