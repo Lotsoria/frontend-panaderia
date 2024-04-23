@@ -1,6 +1,5 @@
 import axios from "axios";
-import { React, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { React, useState } from "react";
 import "./css/styles.css";
 
 const URI = "http://localhost:3000/products/";
@@ -10,7 +9,6 @@ function CreateProductsPage() {
   const [price, setPrice] = useState("");
   const [stock, setStock] = useState("");
   const [image, setImage] = useState("");
-  const navigate = useNavigate();
 
   const createProduct = async (e) => {
     e.preventDefault();

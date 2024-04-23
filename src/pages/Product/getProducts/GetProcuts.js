@@ -1,13 +1,10 @@
 import axios from "axios";
 import { React, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import "./css/styles.css";
 import Swal from "sweetalert2";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
-  Table,
   Button,
-  Container,
   Modal,
   ModalBody,
   ModalHeader,
@@ -16,7 +13,6 @@ import {
 } from "reactstrap";
 const URI = "http://localhost:3000/products/";
 function GetProductsPage() {
-  const navigate = useNavigate();
 
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -114,7 +110,7 @@ const editProduct = async () => {
                     <br></br>
                     <span>Q.{product.price} C/U</span>
                   </h3>
-                </div>
+                </div> 
                 <ul className="sci">
                   <li>
                   <a onClick={() => toggleEditModal(product)}>Editar</a>
