@@ -23,7 +23,10 @@ function Header({ title, name }) {
                 <a href="/product/find">Productos</a>
                 </li>
                 <li>
-                <a href="/staff/find">Staff</a>
+                <a href="/customer">Customers</a>
+                </li>
+                <li>
+                <a href="/staff">Staff</a>
                 </li>
             </ul>
         </div>
