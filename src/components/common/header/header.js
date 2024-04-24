@@ -1,4 +1,3 @@
-// src/components/common/Header.js
 import React from "react";
 import "./css/Header.css";
 import logo from "../../../img/logo.png";
@@ -23,7 +22,7 @@ function Header({ title, name }) {
                 <a href="/product">Productos</a>
                 </li>
                 <li>
-                <a href="/customer">Customers</a>
+                <a href="/customer">Clientes</a>
                 </li>
                 <li>
                 <a href="/staff">Staff</a>
