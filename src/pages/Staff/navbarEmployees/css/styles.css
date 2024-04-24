@@ -1,0 +1,40 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.containerNBP {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  min-height: 100vh;
+  background-color: #efdecb;
+  border-bottom: 1px solid #e9ecef;
+}
+.containerNBP .navbarProducts {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
+.containerNBP .navbarProducts ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.containerNBP .navbarProducts ul li {
+  display: flex;
+  width: 100%;
+  height: 75px;
+  justify-content: center;
+  align-items: center;
+}
+.containerNBP .navbarProducts ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.containerNBP .navbarProducts ul :hover {
+  background-color: #f8f9fa;
+}/*# sourceMappingURL=styles.css.map */

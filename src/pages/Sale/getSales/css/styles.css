@@ -1,4 +1,4 @@
-.containerGetProducts {
+.containerGetSales {
   position: relative;
   z-index: 1;
   display: flex;
@@ -8,7 +8,7 @@
   width: 100%;
   height: 100%;
 }
-.containerGetProducts .cardsContainer {
+.containerGetSales .cardsContainer {
   position: relative;
   z-index: 1;
   display: flex;
@@ -19,11 +19,11 @@
   width: 100%;
   height: auto;
 }
-.containerGetProducts .cardsContainer .card {
+.containerGetSales .cardsContainer .card {
   position: relative;
   z-index: 1;
-  width: 340px;
-  height: 380px;
+  width: 300px;
+  height: 300px;
   background: rgba(255, 255, 255, 0.5);
   margin: 20px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -33,21 +33,21 @@
   align-items: center;
   overflow: hidden;
 }
-.containerGetProducts .cardsContainer .card .imgBox {
+.containerGetSales .cardsContainer .card .imgBox {
   width: 100%;
   height: 100%;
 }
-.containerGetProducts .cardsContainer .card .imgBox img {
+.containerGetSales .cardsContainer .card .imgBox img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.containerGetProducts .cardsContainer .card .content {
+.containerGetSales .cardsContainer .card .content {
   position: absolute;
   bottom: -162px;
   width: 100%;
-  height: 120px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,7 +59,7 @@
           backdrop-filter: blur(15px);
   box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.1);
 }
-.containerGetProducts .cardsContainer .card .content .contentBox h3 {
+.containerGetSales .cardsContainer .card .content .contentBox h3 {
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -73,17 +73,17 @@
   opacity: 0;
   transition-delay: 0.6s;
 }
-.containerGetProducts .cardsContainer .card .content .contentBox h3 span {
+.containerGetSales .cardsContainer .card .content .contentBox h3 span {
   font-size: 12px;
   font-weight: 300;
   text-transform: initial;
 }
-.containerGetProducts .cardsContainer .card .content .sci {
+.containerGetSales .cardsContainer .card .content .sci {
   position: relative;
   bottom: 10px;
   display: flex;
 }
-.containerGetProducts .cardsContainer .card .content .sci li {
+.containerGetSales .cardsContainer .card .content .sci li {
   list-style: none;
   margin: 0 10px;
   transform: translateY(40px);
@@ -91,43 +91,43 @@
   opacity: 0;
   transition-delay: calc(0.2s * var(--i));
 }
-.containerGetProducts .cardsContainer .card .content .sci li a {
+.containerGetSales .cardsContainer .card .content .sci li a {
   font-size: 12px;
 }
-.containerGetProducts .cardsContainer .card .content .sci li:nth-child(1) a {
+.containerGetSales .cardsContainer .card .content .sci li:nth-child(1) a {
   border-radius: 5%;
   padding: 5px;
   background-color: #61ff83;
   color: white;
   text-decoration: none;
 }
-.containerGetProducts .cardsContainer .card .content .sci li:nth-child(2) a {
+.containerGetSales .cardsContainer .card .content .sci li:nth-child(2) a {
   border-radius: 5%;
   padding: 5px;
   background-color: #ff6961;
   color: white;
   text-decoration: none;
 }
-.containerGetProducts .cardsContainer .card:hover .content {
+.containerGetSales .cardsContainer .card:hover .content {
   bottom: 0px;
   transition-delay: 0s;
 }
-.containerGetProducts .cardsContainer .card:hover .content .contentBox h3 {
+.containerGetSales .cardsContainer .card:hover .content .contentBox h3 {
   transform: translateY(0px);
   opacity: 1;
 }
-.containerGetProducts .cardsContainer .card:hover .sci li {
+.containerGetSales .cardsContainer .card:hover .sci li {
   transform: translateY(0px);
   opacity: 1;
 }
-.containerGetProducts .botones {
+.containerGetSales .botones {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
   margin: 20px 0;
 }
-.containerGetProducts .botones button {
+.containerGetSales .botones button {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -137,6 +137,6 @@
   cursor: pointer;
   transition: 0.5s;
 }
-.containerGetProducts .botones button:hover {
+.containerGetSales .botones button:hover {
   background: #ff6961;
 }/*# sourceMappingURL=styles.css.map */

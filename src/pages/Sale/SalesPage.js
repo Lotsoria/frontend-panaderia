@@ -1,21 +1,19 @@
 import React from "react";
 import Header from "../../components/common/header/header";
-import NavBarProductPage from "./navbarProducts/NavBarProducts";
 import { Routes, Route } from "react-router-dom";
-import CreateProductsPage from "./createProducts/CreateProducts";
-import GetProductsPage from "./getProducts/GetProcuts";
+import GetSalesPage from "./getSales/GetSales";
+import NavBarSalePage from "./navbarSales/NavBarSales";
 import "./styles.css";
 
-function ProductPage() {
+function SalePage() {
   return (
-    <div className="containerProductPage">
+    <div className="containerSalePage">
       <Header title="Bienvenidos a la Panadería" name="Alberto Ulin" />
       <div className="container2">
-        <NavBarProductPage className="NavBarProductPage"/>
+        <NavBarSalePage className="NavBarSalePage"/>
         <div className="content">
           <Routes>
-            <Route path="create" element={<CreateProductsPage />} />
-            <Route path="find" element={<GetProductsPage />} />
+            <Route path="find" element={<GetSalesPage />} />
             {/* Aquí puedes añadir la ruta para 'otro' si es necesario */}
           </Routes>
         </div>
@@ -24,4 +22,4 @@ function ProductPage() {
   );
 }
 
-export default ProductPage;
+export default SalePage;

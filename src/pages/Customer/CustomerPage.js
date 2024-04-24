@@ -3,7 +3,7 @@ import Header from "../../components/common/header/header";
 import NavBarCustomerPage from "./navbarCustomers/NavBarCustomers";
 import { Routes, Route } from "react-router-dom";
 import GetCustomersPage from "./getCustomers/GetCustomers";
-import CreateCostumersPage from "./createCustomers/CreateCustomers";
+import CreateCustomersPage from "./createCustomers/CreateCustomers";
 import "./styles.css";
 
 function CustomerPage() {
@@ -15,7 +15,7 @@ function CustomerPage() {
         <div className="content">
           <Routes>
             <Route path="find" element={<GetCustomersPage />} />
-            <Route path="create" element={<CreateCostumersPage />} />
+            <Route path="create" element={<CreateCustomersPage />} />
             {/* Aquí puedes añadir la ruta para 'otro' si es necesario */}
           </Routes>
         </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./css/styles.css";
 
-function NavBarCustomerPage() {
+function NavBarEmployeesPage() {
   return (
     <div className="containerNBP">
       <div className="navbarProducts">
@@ -19,4 +19,4 @@ function NavBarCustomerPage() {
   );
 }
 
-export default NavBarCustomerPage;
+export default NavBarEmployeesPage;

@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./css/styles.css";
 
-function NavBarCustomerPage() {
+function NavBarSalePage() {
   return (
     <div className="containerNBP">
-      <div className="navbarProducts">
+      <div className="navbarSales">
         <ul>
           <li>
             <Link to="create">Crear</Link>
@@ -19,4 +19,4 @@ function NavBarCustomerPage() {
   );
 }
 
-export default NavBarCustomerPage;
+export default NavBarSalePage;

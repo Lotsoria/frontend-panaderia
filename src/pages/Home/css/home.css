@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
 Header {
   display: flex;
   width: 100%;
@@ -50,6 +52,7 @@ Header {
   z-index: 10000;
   max-width: 900px;
   text-align: center;
+  font-family: "Montserrat", sans-serif;
 }
 .containerHome .container2 .banner .content h2 {
   color: #fff;
