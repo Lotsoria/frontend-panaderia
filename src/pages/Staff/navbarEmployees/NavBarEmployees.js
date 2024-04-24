@@ -11,7 +11,7 @@ function NavBarEmployeesPage() {
             <Link to="create">Crear</Link>
           </li>
           <li>
-            <Link to="/find">Ver</Link>
+            <Link to="find">Ver</Link>
           </li>
         </ul>
       </div>

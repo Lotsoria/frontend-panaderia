@@ -13,9 +13,6 @@ function NavBarCustomerPage() {
           <li>
             <Link to="find">Ver</Link>
           </li>
-          <li>
-            <Link to="otro">Staff</Link>
-          </li>
         </ul>
       </div>
     </div>
