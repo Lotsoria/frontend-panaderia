@@ -56,17 +56,20 @@ function GetCustomersPage() {
     setEditModal(!editModal);
   };
 
-  const editCustomer = async () => {
-    try {
-      const response = await axios.put(`${URI}update/${currentCustomer.id}`, {
-        dpi: currentCustomer.dpi,
-        nit: currentCustomer.nit,
-        name: currentCustomer.name,
-        last_name: currentCustomer.last_name,
-        phone: currentCustomer.phone,
-        email: currentCustomer.email,
-      });
+  const editCustomer = async (id) => {
+    const thisCustomer= await axios.get(`${URI}find/${id}`);
 
+
+    try {
+      const response = await axios.put(`${URI}update/${id}`, {
+        dpi: currentCustomer.dpi ? currentCustomer.dpi : thisCustomer.data.dpi,
+        nit: currentCustomer.nit ? currentCustomer.nit : thisCustomer.data.nit,
+        name: currentCustomer.name ? currentCustomer.name : thisCustomer.data.name,
+        last_name: currentCustomer.last_name ? currentCustomer.last_name : thisCustomer.data.last_name,
+        phone: currentCustomer.phone ? currentCustomer.phone : thisCustomer.data.phone,
+        email: currentCustomer.email ? currentCustomer.email : thisCustomer.data.email,
+      });
+      
       if (response.status === 200) {
         toggleEditModal();
         getCustomers();
@@ -107,10 +110,10 @@ function GetCustomersPage() {
               <td>{customer.phone}</td>
               <td>{customer.email}</td>
               <td>
-                {/* <Button color="primary" onClick={() => toggleEditModal(customer)}>Editar</Button> */}
+                <Button color="primary" onClick={() => toggleEditModal(customer)}>Editar</Button>
               </td>
               <td>
-                {/* <Button color="danger" onClick={() => deleteCustomer(customer.id)}>Eliminar</Button> */}
+                <Button color="danger" onClick={() => deleteCustomer(customer.id)}>Eliminar</Button>
               </td>
             </tr>
           ))}
@@ -120,20 +123,10 @@ function GetCustomersPage() {
         <ModalHeader toggle={toggleEditModal}>Editar Cliente</ModalHeader>
         <ModalBody>
           <FormGroup>
-            <label>Id:</label>
-            <input
-              className="form-control"
-              readOnly
-              type="text"
-              value={currentCustomer.id}
-            />
-          </FormGroup>
-          <FormGroup>
             <label>Dpi:</label>
             <input
               className="form-control"
               type="text"
-              value={currentCustomer.dpi}
               onChange={(e) =>
                 setCurrentCustomer({ ...currentCustomer, dpi: e.target.value })
               }
@@ -144,7 +137,6 @@ function GetCustomersPage() {
             <input
               className="form-control"
               type="text"
-              value={currentCustomer.nit}
               onChange={(e) =>
                 setCurrentCustomer({ ...currentCustomer, nit: e.target.value })
               }
@@ -155,7 +147,6 @@ function GetCustomersPage() {
             <input
               className="form-control"
               type="text"
-              value={currentCustomer.name}
               onChange={(e) =>
                 setCurrentCustomer({ ...currentCustomer, name: e.target.value })
               }
@@ -166,7 +157,6 @@ function GetCustomersPage() {
             <input
               className="form-control"
               type="text"
-              value={currentCustomer.last_name}
               onChange={(e) =>
                 setCurrentCustomer({
                   ...currentCustomer,
@@ -180,7 +170,6 @@ function GetCustomersPage() {
             <input
               className="form-control"
               type="text"
-              value={currentCustomer.phone}
               onChange={(e) =>
                 setCurrentCustomer({
                   ...currentCustomer,
@@ -194,7 +183,6 @@ function GetCustomersPage() {
             <input
               className="form-control"
               type="text"
-              value={currentCustomer.email}
               onChange={(e) =>
                 setCurrentCustomer({
                   ...currentCustomer,
@@ -205,7 +193,7 @@ function GetCustomersPage() {
           </FormGroup>
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={() => editCustomer()}>
+          <Button color="primary" onClick={() => editCustomer(currentCustomer.id)}>
             Editar
           </Button>
           <Button color="secondary" onClick={toggleEditModal}>
