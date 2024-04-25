@@ -3,6 +3,7 @@ import Header from "../../components/common/header/header";
 import { Routes, Route } from "react-router-dom";
 import NavBarEmployeesPage from "./navbarEmployees/NavBarEmployees";
 import GetEmployeesPage from "./getEmployees/GetEmployees";
+import CreateEmployeesPage from "./createEmployees/CreateEmployees";
 import "./styles.css";
 function StaffPage() {
   return (
@@ -13,7 +14,7 @@ function StaffPage() {
         <div className="content">
           <Routes>
             <Route path="find" element={<GetEmployeesPage />} />
-            {/* Aquí puedes añadir la ruta para 'otro' si es necesario */}
+            <Route path="create" element={<CreateEmployeesPage />} />
           </Routes>
         </div>
       </div>

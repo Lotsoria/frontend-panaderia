@@ -1,4 +1,4 @@
-.containerCreateCustomer {
+.containerCreateEmployees {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,34 +6,34 @@
   height: 100vh;
   width: 100%;
 }
-.containerCreateCustomer h3 {
+.containerCreateEmployees h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
-.containerCreateCustomer form {
+.containerCreateEmployees form {
   width: 500px;
 }
-.containerCreateCustomer form .mb-3 {
+.containerCreateEmployees form .mb-3 {
   display: flex;
   flex-direction: column;
   width: 100%;
   margin-bottom: 1rem;
 }
-.containerCreateCustomer form .mb-3 .form-label {
+.containerCreateEmployees form .mb-3 .form-label {
   font-size: 1.2rem;
   padding-bottom: 10px;
 }
-.containerCreateCustomer form .mb-3 .form-control {
+.containerCreateEmployees form .mb-3 .form-control {
   width: 100%;
   height: 2.5rem;
   border-radius: 5px;
   border: 1px solid #ced4da;
 }
-.containerCreateCustomer form .mb-3 .form-control:focus {
+.containerCreateEmployees form .mb-3 .form-control:focus {
   border: 1px solid #ced4da;
   box-shadow: none;
 }
-.containerCreateCustomer form .mb-3 .div_file {
+.containerCreateEmployees form .mb-3 .div_file {
   position: relative;
   height: 40px;
   width: 100%;
@@ -41,7 +41,7 @@
   border-radius: 8px;
   border: 1px solid black;
 }
-.containerCreateCustomer form .mb-3 .div_file .text {
+.containerCreateEmployees form .mb-3 .div_file .text {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,7 +49,7 @@
   height: 100%;
   color: black;
 }
-.containerCreateCustomer form .mb-3 .div_file .btn_enviar {
+.containerCreateEmployees form .mb-3 .div_file .btn_enviar {
   position: absolute;
   top: 0;
   left: 0;
@@ -59,12 +59,12 @@
   height: 100%;
   opacity: 0;
 }
-.containerCreateCustomer form .mb-3 .div_file:hover {
+.containerCreateEmployees form .mb-3 .div_file:hover {
   background: #efdecb;
   transition: 0.3s;
   border: 1px solid #efdecb;
 }
-.containerCreateCustomer form .mb-3 .div_file:hover .text {
+.containerCreateEmployees form .mb-3 .div_file:hover .text {
   color: black;
 }
 

@@ -13,26 +13,8 @@ function CreateCostumersPage() {
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
     const navigate = useNavigate()    
-
     const createCustomer = async (e) => {
         e.preventDefault();
-        // const formData = new FormData();
-        // formData.append("dpi", dpi ? dpi : "No dpi");
-        // formData.append("nit", nit ? nit : "No nit");
-        // formData.append("name", name ? name : "No name");
-        // formData.append("last_name", last_name ? last_name : "No last_name");
-        // formData.append("phone", phone ? phone : "No phone");
-        // formData.append("email", email ? email : "No email");
-        // try{
-        //     console.log(formData);
-        //     const response = await axios.post(`${URI}create`, formData, {
-        //         headers: { "Content-Type": "multipart/form-data" },
-        //       });
-        //       navigate('/customer/find')
-        // }catch (error) {
-        //     console.error("Error creating customer:", error);
-        // }
-
         try{
                 await axios.post(`${URI}create`, {dpi: dpi, nit: nit, name: name, last_name:last_name, phone:phone, email:email});
                   navigate('/customer/find')
@@ -40,7 +22,6 @@ function CreateCostumersPage() {
                 console.error("Error creating customer:", error);
             }
     };
-
 
     return (
         <div className="containerCreateCustomer">
