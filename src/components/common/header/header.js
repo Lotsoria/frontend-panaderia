@@ -1,4 +1,3 @@
-// src/components/common/Header.js
 import React from "react";
 import "./css/Header.css";
 import logo from "../../../img/logo.png";
@@ -27,6 +26,9 @@ function Header({ title, name }) {
                 </li>
                 <li>
                 <a href="/staff/find">Staff</a>
+                </li>
+                <li>
+                <a href="/sale/find">Sale</a>
                 </li>
             </ul>
         </div>
