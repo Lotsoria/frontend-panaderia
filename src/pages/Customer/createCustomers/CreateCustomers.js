@@ -13,7 +13,6 @@ function CreateCostumersPage() {
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
     const navigate = useNavigate()    
-
     const createCustomer = async (e) => {
         e.preventDefault();
         try{
@@ -23,7 +22,6 @@ function CreateCostumersPage() {
                 console.error("Error creating customer:", error);
             }
     };
-
 
     return (
         <div className="containerCreateCustomer">
