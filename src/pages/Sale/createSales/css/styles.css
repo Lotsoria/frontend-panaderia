@@ -1,0 +1,83 @@
+.containerCreateSale {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+.containerCreateSale h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.containerCreateSale form {
+  width: 500px;
+}
+.containerCreateSale form .mb-3 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.containerCreateSale form .mb-3 .form-label {
+  font-size: 1.2rem;
+  padding-bottom: 10px;
+}
+.containerCreateSale form .mb-3 .form-control {
+  width: 100%;
+  height: 2.5rem;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+.containerCreateSale form .mb-3 .form-control:focus {
+  border: 1px solid #ced4da;
+  box-shadow: none;
+}
+.containerCreateSale form .mb-3 .div_file {
+  position: relative;
+  height: 40px;
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid black;
+}
+.containerCreateSale form .mb-3 .div_file .text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: black;
+}
+.containerCreateSale form .mb-3 .div_file .btn_enviar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.containerCreateSale form .mb-3 .div_file:hover {
+  background: #efdecb;
+  transition: 0.3s;
+  border: 1px solid #efdecb;
+}
+.containerCreateSale form .mb-3 .div_file:hover .text {
+  color: black;
+}
+
+.btn {
+  width: 100%;
+  height: 2.5rem;
+  background-color: rgba(239, 222, 203, 0.4431372549);
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #efdecb;
+}/*# sourceMappingURL=styles.css.map */
